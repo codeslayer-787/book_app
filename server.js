@@ -28,7 +28,7 @@ function handleGetBooks(req, res) {
     .then(booksData => {
       console.log(booksData.body.items);
       const booksArray = booksData.body.items.map(newBook => new Book(newBook));
-      res.render('pages/index.ejs', booksArray);
+      res.render('./pages/searches/new.ejs', booksArray);
     })
     .catch(error => {
       console.log(error);
