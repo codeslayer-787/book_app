@@ -1,8 +1,15 @@
+
 body {
   box-sizing: border-box;
+  height: 100%;
 }
-
-header footer{
+/* header {
+  height: 20%;
   background-color: black;
   color: white;
+} */
+
+#subtitle {
+  height: 10%;
+  background-color: gray;
 }
