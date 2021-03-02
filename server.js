@@ -16,6 +16,11 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
+app.get('/', (req, res)=> {
+  res.render('./pages/index.ejs');
+});
+
+
 // Sanity check page
 // app.get('/health', handleHealthRequest);
 // function handleHealthRequest(req, res) {
