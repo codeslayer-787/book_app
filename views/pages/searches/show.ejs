@@ -5,18 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
   <header>
     <h1>Best Books!</h1>
   </header>
-  <!-- <div id="subtitle">
-    <h3>Search by Title or Author</h3>
-  </div> -->
   <% finalBooksArray.forEach(book => { %>
     <h2><%= book.title %></h2>
     <img src=<%= book.image %> class="center" >

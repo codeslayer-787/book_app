@@ -14,20 +14,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //Changes the setting of how we render html to use ejs.
 
+// Sets Index.ejs as our homepage
 app.get('/', (req, res)=> {
   res.render('./pages/index.ejs');
 });
-
-
-// Sanity check page
-// app.get('/health', handleHealthRequest);
-// function handleHealthRequest(req, res) {
-//   console.log(handleHealthRequest);
-//   const ejsObject = { teacher: 'nicholas', course: '301d71', funFactor: 7 };
-//   res.render('pages/index.ejs', ejsObject);
-// }
 
 app.get('/books', renderSearchPage);
 app.post('/search', handleGetBooks);
@@ -35,7 +27,7 @@ function renderSearchPage(req, res){
   res.render('pages/searches/new.ejs');
 }
 function handleGetBooks(req, res) {
-  const searchQuery = req.body.type;
+  const searchQuery = req.body.input;
   const searchType = req.body.type;
   console.log('this is the body', req.body);
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -63,7 +55,7 @@ function Book(object) {
   this.author = object.authors;
   this.description = object.description;
   this.image = object.imageLinks.thumbnail;
-  console.log(this.description);
+  console.log(this.image);
 }
 
 
