@@ -14,21 +14,39 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
 
-app.get('/health', handleHealthRequest);
-function handleHealthRequest(req, res) {
-  console.log(handleHealthRequest);
-  const ejsObject = { teacher: 'nicholas', course: '301d71', funFactor: 7 };
-  res.render('pages/index.ejs', ejsObject);
+// Sanity check page
+// app.get('/health', handleHealthRequest);
+// function handleHealthRequest(req, res) {
+//   console.log(handleHealthRequest);
+//   const ejsObject = { teacher: 'nicholas', course: '301d71', funFactor: 7 };
+//   res.render('pages/index.ejs', ejsObject);
+// }
+
+app.get('/books', renderSearchPage);
+app.post('/search', handleGetBooks);
+function renderSearchPage(req, res){
+  res.render('pages/searches/new.ejs');
 }
-
-app.get('/books', handleGetBooks);
 function handleGetBooks(req, res) {
-  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=search+inauthor`)
+  const searchQuery = req.body.input;
+  const searchType = req.body.type;
+  console.log('this is the body', req.body);
+  let url = 'https://www.googleapis.com/books/v1/volumes?q=';
+  if(searchType === 'title'){
+    url += `intitle=${searchQuery}`;
+  }
+  if(searchType === 'author'){
+    url += `inauthor=${searchQuery}`;
+  }
+  console.log(url);
+  superagent.get(url)
     .then(booksData => {
-      console.log(booksData.body.items);
-      const booksArray = booksData.body.items.map(newBook => new Book(newBook));
-      res.render('./pages/searches/new.ejs', booksArray);
+      const bookArray = booksData.body.items;
+      const finalBooksArray = bookArray.map(newBook => new Book(newBook.volumeInfo));
+      console.log(bookArray + 'book array here');
+      res.render('pages/searches/show.ejs', {finalBooksArray: finalBooksArray});
     })
     .catch(error => {
       console.log(error);
@@ -38,6 +56,9 @@ function handleGetBooks(req, res) {
 function Book(object) {
   this.title = object.title;
   this.author = object.authors;
+  this.description = object.description;
+  this.image = object.imageLinks.smallThumbnail;
+  console.log(this.description);
 }
 
 

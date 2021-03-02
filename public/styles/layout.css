@@ -1,6 +1,9 @@
 header {
-  height: 15%;
+  height: 20%;
+  background-color: black;
+  color: white;
 }
 #subtitle {
   height: 10%;
+  background-color: gray;
 }

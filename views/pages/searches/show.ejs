@@ -14,19 +14,24 @@
   <header>
     <h1>Best Books!</h1>
   </header>
-  <div id="subtitle">
+  <!-- <div id="subtitle">
     <h3>Search by Title or Author</h3>
-  </div>
+  </div> -->
+  <% finalBooksArray.forEach(book => { %>
+    <h1><%= book.title %></h1>
+    <img src=<%= book.image %> >
+    <p><%= book.description %></p>
+  <% }) %>
   <!-- Action is the url we want to go visit -->
-  <form action="/search" method="POST">
+  <!-- <form action="/search" method="POST">
     <fieldset>
       <legend>Search by Title or Author</legend>
-      Search<input name="input" type="text">
-      Title<input type="radio" value="title" name="type">
-      Author<input type="radio" value="author" name="type">
+      Search<input name="Title or Author" type="text">
+      Title<input type="radio" value="title" name="This">
+      Author<input type="radio" value="author" name="This">
       <input type="submit">
     </fieldset>
-  </form>
+  </form> -->
 
   <!-- <form action="/add-ice-cream-flavor" method="POST">
     <input type="text" name="flavor">

@@ -16,9 +16,11 @@ Estimate of time needed to complete: 4 hours
 
 Start time: 3:20pm CST
 
-Finish time: _____
+Finish time: 10:26pm CST
 
-Actual time needed to complete: _____
+Actual time needed to complete: 6 hours
 
 Change Log
 03-01-2021 5:30pm - Uploaded the server files and deployed server.
+
+03-01-2021 10:27pm - Search query is functional
