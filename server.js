@@ -30,7 +30,7 @@ function renderSearchPage(req, res){
   res.render('pages/searches/new.ejs');
 }
 function handleGetBooks(req, res) {
-  const searchQuery = req.body.input;
+  const searchQuery = req.body.type;
   const searchType = req.body.type;
   console.log('this is the body', req.body);
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -57,7 +57,7 @@ function Book(object) {
   this.title = object.title;
   this.author = object.authors;
   this.description = object.description;
-  this.image = object.imageLinks.smallThumbnail;
+  this.image = object.imageLinks.thumbnail;
   console.log(this.description);
 }
 

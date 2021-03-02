@@ -18,8 +18,8 @@
     <h3>Search by Title or Author</h3>
   </div> -->
   <% finalBooksArray.forEach(book => { %>
-    <h1><%= book.title %></h1>
-    <img src=<%= book.image %> >
+    <h2><%= book.title %></h2>
+    <img src=<%= book.image %> class="center" >
     <p><%= book.description %></p>
   <% }) %>
   <!-- Action is the url we want to go visit -->
