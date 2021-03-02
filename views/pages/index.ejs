@@ -18,11 +18,12 @@
     <h3>Search by Title or Author</h3>
   </div>
   <!-- Action is the url we want to go visit -->
-  <form action="/books">
+  <form action="/search" method="POST">
     <fieldset>
       <legend>Search by Title or Author</legend>
-      <input name="title" type="text">
-      <input type="author" name="text">
+      Search<input name="input" type="text">
+      Title<input type="radio" value="title" name="type">
+      Author<input type="radio" value="author" name="type">
       <input type="submit">
     </fieldset>
   </form>
