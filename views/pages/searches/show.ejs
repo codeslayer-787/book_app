@@ -18,9 +18,10 @@
   </header>
   <% finalBooksArray.forEach(book => { %>
     <h2><%= book.title %></h2>
-    <img src=<%= book.image %> class="center" >
+    <img src=<%= book.image %> >
     <p><%= book.description %></p>
   <% }) %>
+  <!-- class="center" -->
   <!-- Action is the url we want to go visit -->
   <!-- <form action="/search" method="POST">
     <fieldset>
