@@ -5,7 +5,6 @@ require('dotenv').config();
 
 // const PARKS_API_KEY = process.env.PARKS_API_KEY;
 
-
 const app = express();
 app.use(cors());
 
