@@ -7,12 +7,21 @@
   <title>Document</title>
 </head>
 <body>
+  <header>
+  <div><h3>Book Details</h3></div>
+  <a href="/">
+  <img class="drop_img" src="public/styles/imgs/hamburger-menu.jpg">
+</a>
+</header>
+  <ul>
   <article class="book_list">
     <img class="book_image" src=<%= chosenOne.image_url %>>
     <h2 class="books"><%= chosenOne.title %></h2>
     <h3 class="books"><%= chosenOne.author %></h3>
     <p class="books"><%= chosenOne.description %></p>
     <p class="books"><%= chosenOne.isbn %></p>
+    <form action="/update/<%= chosenOne.id %>?_method=PUT" method="post"></form>
   </article>
+</ul>
 </body>
 </html>
