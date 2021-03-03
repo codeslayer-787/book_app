@@ -16,11 +16,15 @@
   <header>
     <h1>Best Books!</h1>
   </header>
+  <ul>
   <% finalBooksArray.forEach(book => { %>
+    <li>
     <h2><%= book.title %></h2>
     <img src=<%= book.image %> >
     <p><%= book.description %></p>
+  </li>
   <% }) %>
+</ul>
   <!-- class="center" -->
   <!-- Action is the url we want to go visit -->
   <!-- <form action="/search" method="POST">
