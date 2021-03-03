@@ -28,12 +28,14 @@ Change Log:
 
 03-01-2021 11:22pm - Applies initial styling template.
 
+3-02-2021 11:14pm - Adds partial server functionality.
+
 Number and name of feature: Day 2 (SQL Setup)
 
 Estimate of time needed to complete: 4 hours
 
 Start time: 4:30pm CST
 
-Finish time: 
+Finish time: 11:00pm CST
 
-Actual time needed to complete: 
+Actual time needed to complete: 6:30 hrs

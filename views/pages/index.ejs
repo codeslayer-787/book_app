@@ -20,7 +20,22 @@
     <h3>Find Your Favorite Books</h3>
   </div>
   <!-- Action is the url we want to go visit -->
-  <form action="/search" method="POST">
+    <ul>
+      <% bookList.forEach(book => { %>
+      <article class="book_list">
+        <h2 class="books"><%= book.title %></h2>
+        <img class="book_image" src=<%= book.image_url %> >
+        <h3 class="books"><%= book.author %></h3>
+        <p class="books_description"><%= book.description %> </p>
+        <div>
+          <button class="detail_button"><a href="/books/<%= book.id %>">View Details</button>
+        </div>
+      </article>
+    <% }) %>
+    </ul>
+        
+
+  <!-- <form action="/search" method="POST">
     <fieldset>
       <legend>Search by Title or Author</legend>
       Search<input name="input" type="text">
@@ -28,7 +43,7 @@
       Author<input type="radio" value="author" name="type">
       <input type="submit">
     </fieldset>
-  </form>
+  </form> -->
 
   <!-- <form action="/add-ice-cream-flavor" method="POST">
     <input type="text" name="flavor">
