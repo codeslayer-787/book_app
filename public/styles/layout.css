@@ -86,6 +86,9 @@ input {
     border: ridge black;
     border-width: 5px;
   }
+  .drop_img {
+    height: 50px;
+  }
   .center {
     display: block;
     margin-left: auto;
