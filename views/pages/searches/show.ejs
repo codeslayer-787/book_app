@@ -17,9 +17,25 @@
     <h1>Best Books!</h1>
   </header>
   <% finalBooksArray.forEach(book => { %>
+    <article class="book_list">
     <h2><%= book.title %></h2>
+    <h3><%= book.author%></h3>
     <img src=<%= book.image %> >
     <p><%= book.description %></p>
+    <p>image url <%= book.image %></p>
+    <form id="create-form" action="/books" method="post">
+      <fieldset>
+        <input type="hidden" name="author" value="<%= book.author %>">
+        <input type="hidden" name="title" value="<%= book.title %>">
+        <input type="hidden" name="isbn" value="<%= book.isbn %>">
+        <input type="hidden" name="image_url" value="<%= book.image %>">
+        <input type="hidden" name="description" value="<%= book.description %>">
+        <div>
+          <button class="detail_button" type="submit">Save This Book!</button>
+        </div>
+      </fieldset>
+    </form>
+  </article>
   <% }) %>
   <!-- class="center" -->
   <!-- Action is the url we want to go visit -->

@@ -17,7 +17,7 @@
     <h1>Best Books!</h1>
   </header>
   <div id="subtitle">
-    <h3>Find Your Favorite Books</h3>
+    <div class="search" ><a href="/search">Find Your Favorite Books</a></div>
   </div>
   <!-- Action is the url we want to go visit -->
     <ul>
@@ -28,7 +28,7 @@
         <h3 class="books"><%= book.author %></h3>
         <p class="books_description"><%= book.description %> </p>
         <div>
-          <button class="detail_button"><a href="/books/<%= book.id %>">View Details</button>
+          <button class="detail_button"><a href="/books/<%= book.id %>">View Details</a></button>
         </div>
       </article>
     <% }) %>
