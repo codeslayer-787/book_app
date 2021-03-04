@@ -1,6 +1,4 @@
 @media(max-width: 480px){
-
-
 body {
   height: 100%;
   background-color: gray;
@@ -101,5 +99,11 @@ input {
   }
   input {
     border-radius: 5%;
+  }
+  footer {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .article {
+    justify-content: center;
   }
 }
