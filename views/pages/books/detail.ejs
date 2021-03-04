@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <%- include( '../../layout/head.ejs' ) %>
 </head>
 <body>
   <header>
-  <div><h3>Book Details</h3></div>
-  <a href="/">
-  <img class="drop_img" src="public/styles/imgs/hamburger-menu.jpg">
-</a>
+  <h3>Book Details</h3>
+  <%- include( '../../layout/header.ejs' ) %>
 </header>
   <ul>
   <article class="book_list">
@@ -23,5 +18,8 @@
     <form action="/update/<%= chosenOne.id %>?_method=PUT" method="post"></form>
   </article>
 </ul>
+<footer>
+  <%- include( '../../layout/footer.ejs' ) %>
+</footer>
 </body>
 </html>

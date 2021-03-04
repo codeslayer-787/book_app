@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/reset.css">
-  <link rel="stylesheet" href="./styles/base.css">
-  <link rel="stylesheet" href="./styles/layout.css">
-  <link rel="stylesheet" href="./styles/modules.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <%- include( '../layout/head.ejs' ) %>
 </head>
 <body>
   <header>
     <h1>Best Books!</h1>
+    <%- include( '../layout/header.ejs' ) %>
   </header>
   <div id="subtitle">
     <div class="search" ><a href="/search">Find Your Favorite Books</a></div>
@@ -33,22 +25,9 @@
       </article>
     <% }) %>
     </ul>
-        
-
-  <!-- <form action="/search" method="POST">
-    <fieldset>
-      <legend>Search by Title or Author</legend>
-      Search<input name="input" type="text">
-      Title<input type="radio" value="title" name="type">
-      Author<input type="radio" value="author" name="type">
-      <input type="submit">
-    </fieldset>
-  </form> -->
-
-  <!-- <form action="/add-ice-cream-flavor" method="POST">
-    <input type="text" name="flavor">
-    <input type="submit">
-  </form> -->
-  <footer></footer>
+  </form>
+  <footer>
+    <%- include( '../layout/footer.ejs' ) %>
+  </footer>
 </body>
 </html>
