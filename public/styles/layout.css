@@ -57,6 +57,9 @@ input {
     background-color: gray;
     display: grid;
   }
+  .book_list {
+    text-align: center;
+  }
   header {
     /* height: 30%; */
     background-color: black;
@@ -105,5 +108,11 @@ input {
   }
   .article {
     justify-content: center;
+  }
+  .detail_button {
+    background-color: rgb(31, 35, 39);
+    border-radius: 10px;
+    height: 35px;
+    width: 150px;
   }
 }
